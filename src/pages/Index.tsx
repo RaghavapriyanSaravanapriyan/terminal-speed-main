@@ -25,25 +25,25 @@ const Index = () => {
       <main className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
         {/* Dynamic Hero Section based on Reference Image */}
         <section className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-muted-foreground text-[10px] sm:text-xs font-bold tracking-[0.3em] mb-12 uppercase opacity-40 animate-in fade-in duration-1000">
+          <p className="text-muted-foreground text-[8px] sm:text-xs font-bold tracking-[0.6em] mb-10 uppercase opacity-60 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
             // IDENTITY
           </p>
 
-          <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold tracking-tighter mb-8 leading-[0.8] animate-in fade-in slide-in-from-bottom-12 duration-1000">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 leading-[0.85] text-white animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both">
             Raghavapriyan<br />
             Saravanapriyan
           </h1>
 
-          <div className="flex flex-col items-center gap-12 mt-4 animate-in fade-in duration-1000 delay-300">
-            <p className="text-muted-foreground text-[10px] sm:text-sm font-bold tracking-[0.4em] uppercase opacity-70">
+          <div className="flex flex-col items-center gap-12 mt-4">
+            <p className="text-muted-foreground text-[8px] sm:text-[10px] font-bold tracking-[0.4em] uppercase opacity-70 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-both">
               CS UNDERGRAD <span className="mx-2 opacity-30">|</span> VIT VELLORE <span className="mx-2 opacity-30">|</span> AI/ML
             </p>
 
-            <div className="mt-8 space-y-4">
-              <p className="text-muted-foreground text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase opacity-30">
+            <div className="mt-12 space-y-4">
+              <p className="text-[#fef9c3] text-[8px] sm:text-[10px] font-mono font-bold tracking-[0.6em] uppercase opacity-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-1000 fill-mode-both">
                 FOR THE LOVE OF THE GAME
               </p>
-              <p className="text-lg sm:text-xl font-mono tracking-tight text-foreground/90">
+              <p className="text-lg sm:text-xl font-mono tracking-tight text-[#fef9c3] opacity-90">
                 {typedTerminalText}<span className="cursor-blink ml-1 text-primary">█</span>
               </p>
             </div>
@@ -51,11 +51,11 @@ const Index = () => {
         </section>
 
         {/* Identity & Links Section - Side by Side */}
-        <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-32 border-t border-border/50">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-24 border-t border-border/50">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Links Vertical */}
-            <div className="flex flex-col items-start gap-8 order-2 md:order-1">
-              <p className="text-muted-foreground text-xs font-bold tracking-widest mb-4 uppercase opacity-50">// CONNECT</p>
+            <div className="flex flex-col items-start gap-6 order-2 md:order-1">
+              <p className="text-muted-foreground text-[10px] font-bold tracking-widest mb-3 uppercase opacity-50">// CONNECT</p>
               <div className="flex flex-col gap-6 text-2xl sm:text-4xl font-bold tracking-tighter transition-all">
                 <a
                   href="https://github.com/RaghavapriyanSaravanapriyan"
@@ -95,16 +95,16 @@ const Index = () => {
         </section>
 
         {/* GitHub Contributions */}
-        <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-24 border-t border-border/50">
-          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-8">
-            <p className="text-muted-foreground text-xs font-bold tracking-widest uppercase opacity-50">// CONTRIBUTIONS</p>
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
+          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-6">
+            <p className="text-white text-lg sm:text-xl font-bold tracking-widest uppercase opacity-100">// CONTRIBUTIONS</p>
             {contributionCount !== null && (
-              <p className="text-xl font-bold tracking-tight">
-                {contributionCount.toLocaleString()} <span className="text-muted-foreground font-normal text-sm uppercase tracking-widest ml-2">Contributions in the last year</span>
+              <p className="text-lg font-bold tracking-tight text-white/90">
+                {contributionCount.toLocaleString()} <span className="text-muted-foreground font-normal text-xs uppercase tracking-widest ml-2">Contributions in the last year</span>
               </p>
             )}
           </div>
-          <div className="overflow-x-auto flex justify-center grayscale hover:grayscale-0 transition-all duration-1000 hover:scale-[1.02] transform transition-transform">
+          <div className="overflow-x-auto flex justify-center grayscale hover:grayscale-0 transition-all duration-1000 hover:scale-[1.02] transform transition-transform p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
             <img
               src="https://github-contributions-api.deno.dev/RaghavapriyanSaravanapriyan.svg?no-legend=true&no-total=true"
               alt="GitHub Contributions"
@@ -118,123 +118,97 @@ const Index = () => {
         <LinkedInSection />
 
         {/* Projects */}
-        <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-24 border-t border-border/50">
-          <p className="text-muted-foreground text-xs font-bold tracking-widest mb-12 uppercase opacity-50">// PROJECTS</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
-            <div className="group border border-border/50 p-8 rounded-2xl hover:bg-muted/30 transition-all duration-500">
-              <a
-                href="https://github.com/RaghavapriyanSaravanapriyan/CLI_Student_management_system"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-bold hover:text-primary transition-colors inline-block mb-3"
-              >
-                CLI Management
-              </a>
-              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">Efficient student management system via terminal interface.</p>
-              <p className="text-xs font-mono tracking-widest uppercase opacity-40">Python</p>
-            </div>
-            <div className="group border border-border/50 p-8 rounded-2xl hover:bg-muted/30 transition-all duration-500">
-              <a
-                href="https://github.com/RaghavapriyanSaravanapriyan/Predicting-future-iPhone-Pro-Max-prices-using-ML"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-bold hover:text-primary transition-colors inline-block mb-3"
-              >
-                iPhone ML
-              </a>
-              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">Linear regression model for mobile device price forecasting.</p>
-              <p className="text-xs font-mono tracking-widest uppercase opacity-40">Python, Scikit-learn</p>
-            </div>
-            <div className="group border border-border/50 p-8 rounded-2xl hover:bg-muted/30 transition-all duration-500">
-              <a
-                href="https://github.com/RaghavapriyanSaravanapriyan/AutoWifi-VIT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-bold hover:text-primary transition-colors inline-block mb-3"
-              >
-                AutoWifi-VIT
-              </a>
-              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">Automated authentication script for campus WiFi networks.</p>
-              <p className="text-xs font-mono tracking-widest uppercase opacity-40">Python</p>
-            </div>
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
+          <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// PROJECTS</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10">
+            {[
+              { title: "CLI Management", desc: "Efficient student management system via terminal interface.", tech: "Python", url: "https://github.com/RaghavapriyanSaravanapriyan/CLI_Student_management_system" },
+              { title: "iPhone ML", desc: "Linear regression model for mobile device price forecasting.", tech: "Python, Scikit-learn", url: "https://github.com/RaghavapriyanSaravanapriyan/Predicting-future-iPhone-Pro-Max-prices-using-ML" },
+              { title: "AutoWifi-VIT", desc: "Automated authentication script for campus WiFi networks.", tech: "Python", url: "https://github.com/RaghavapriyanSaravanapriyan/AutoWifi-VIT" }
+            ].map((project, idx) => (
+              <div key={idx} className="group border border-white/10 glass-card p-8 rounded-2xl bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl font-bold text-white group-hover:text-primary transition-colors inline-block mb-3"
+                >
+                  {project.title}
+                </a>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{project.desc}</p>
+                <p className="text-xs font-mono tracking-widest uppercase opacity-40">{project.tech}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Updated Certifications Section */}
-        <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-24 border-t border-border/50">
-          <p className="text-muted-foreground text-xs font-bold tracking-widest mb-12 uppercase opacity-50">// CERTIFICATIONS</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16">
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold tracking-tight">Generative AI: Introduction and Applications</h3>
-              <p className="text-muted-foreground text-sm">IBM — <span className="font-mono">Feb 2026</span></p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-muted text-xs font-mono rounded-full">Artificial Intelligence</span>
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
+          <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// CERTIFICATIONS</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14">
+            {(syncData.certifications || []).map((cert, idx) => (
+              <div key={idx} className="space-y-4">
+                <h3 className="text-xl font-bold tracking-tight text-white">{cert.title}</h3>
+                <p className="text-muted-foreground text-sm">{cert.issuer} — <span className="font-mono">{cert.date}</span></p>
+                <div className="flex flex-wrap gap-2">
+                  {cert.skills.map((skill, sIdx) => (
+                    <span key={sIdx} className="px-3 py-1 bg-white/5 backdrop-blur-sm text-xs font-mono rounded-full border border-white/10">{skill}</span>
+                  ))}
+                </div>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Test Scores Section */}
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
+          <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// TEST_SCORES</p>
+          <div className="space-y-10 font-mono">
+            <div>
+              <p className="text-lg text-white mb-2">CBSE_12TH: <span className="text-primary">478/500 (95.6%)</span> — Rank 2 Biology Stream</p>
+              <p className="text-muted-foreground text-xs opacity-50">&gt; Physics, Chemistry, Biology, Mathematics</p>
             </div>
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold tracking-tight">Introduction to Artificial Intelligence (AI)</h3>
-              <p className="text-muted-foreground text-sm">IBM — <span className="font-mono">Feb 2026</span></p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-muted text-xs font-mono rounded-full">Artificial Intelligence</span>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold tracking-tight">C for Everyone: Programming Fundamentals</h3>
-              <p className="text-muted-foreground text-sm">University of California Santa Cruz — <span className="font-mono">Oct 2025</span></p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-muted text-xs font-mono rounded-full">C Programming</span>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold tracking-tight">Programming with Generative AI</h3>
-              <p className="text-muted-foreground text-sm">IIT Guwahati — <span className="font-mono">Sep 2025</span></p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-muted text-xs font-mono rounded-full">Prompt Engineering</span>
-                <span className="px-3 py-1 bg-muted text-xs font-mono rounded-full">GitHub Copilot</span>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold tracking-tight">The Complete Python Bootcamp From Zero to Hero</h3>
-              <p className="text-muted-foreground text-sm">Pierian Training — <span className="font-mono">Sep 2025</span></p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-muted text-xs font-mono rounded-full">Python</span>
-              </div>
+            <div>
+              <p className="text-lg text-white mb-2">CBSE_10TH: <span className="text-primary">486/500 (97.2%)</span> — Perfect in Social Science</p>
             </div>
           </div>
         </section>
 
         {/* Skills */}
-        <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-24 border-t border-border/50">
-          <p className="text-muted-foreground text-xs font-bold tracking-widest mb-12 uppercase opacity-50">// SKILLS</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-16">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
+          <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// SKILLS</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-14">
             <div>
-              <p className="text-2xl font-bold mb-6">Languages</p>
-              <p className="text-muted-foreground text-lg font-mono leading-loose">Python, C, C++, MATLAB</p>
+              <p className="text-xl font-bold mb-5 text-white text-opacity-90">Languages</p>
+              <p className="text-muted-foreground text-base font-mono leading-loose">Python, C, C++, MATLAB</p>
             </div>
             <div>
-              <p className="text-2xl font-bold mb-6">Domains</p>
-              <p className="text-muted-foreground text-lg font-mono leading-loose">AI/ML, Data Science, Prompt Engineering</p>
+              <p className="text-xl font-bold mb-5 text-white text-opacity-90">Domains</p>
+              <p className="text-muted-foreground text-base font-mono leading-loose">AI/ML, Data Science, Prompt Engineering</p>
             </div>
             <div>
-              <p className="text-2xl font-bold mb-6">Tools</p>
-              <p className="text-muted-foreground text-lg font-mono leading-loose">Scikit-learn, Git, Linux, Copilot</p>
+              <p className="text-xl font-bold mb-5 text-white text-opacity-90">Tools</p>
+              <p className="text-muted-foreground text-base font-mono leading-loose">Scikit-learn, Git, Linux, Copilot</p>
             </div>
           </div>
         </section>
 
         {/* Education */}
-        <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-24 border-t border-border/50">
-          <p className="text-muted-foreground text-xs font-bold tracking-widest mb-12 uppercase opacity-50">// EDUCATION</p>
-          <div className="space-y-16">
-            <div className="flex flex-col md:flex-row justify-between gap-8">
-              <div>
-                <p className="text-3xl sm:text-4xl font-bold mb-2 tracking-tighter">B.TECH COMPUTER SCIENCE</p>
-                <p className="text-xl text-muted-foreground uppercase tracking-widest opacity-60">Vellore Institute of Technology</p>
-              </div>
-              <div className="text-right md:text-right">
-                <p className="text-xl font-bold">2025 — 2029</p>
-                <p className="text-lg text-muted-foreground font-mono opacity-50">GPA: 9.1</p>
-              </div>
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
+          <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// EDUCATION</p>
+          <div className="space-y-12">
+            <div>
+              <p className="text-2xl sm:text-3xl font-bold mb-2 tracking-tighter text-white">B.TECH COMPUTER SCIENCE CORE</p>
+              <p className="text-lg text-muted-foreground uppercase tracking-widest opacity-60">Vellore Institute of Technology</p>
+              <p className="text-base text-primary font-mono mt-3">2025 — 2029 | CGPA: 9.1</p>
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl font-bold mb-2 tracking-tighter text-white">HIGH SCHOOL</p>
+              <p className="text-lg text-muted-foreground uppercase tracking-widest opacity-60">The PSBB Millennium School, OMR</p>
+              <p className="text-base font-mono mt-3 opacity-70">2021 — 2025 | Biology Stream, 12th Grade CBSE</p>
+              <p className="text-muted-foreground text-[10px] mt-2 italic opacity-40 text-left-corner">
+                &gt; sat in last bench left corner.
+              </p>
             </div>
           </div>
         </section>
