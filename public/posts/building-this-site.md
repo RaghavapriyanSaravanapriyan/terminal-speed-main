@@ -1,7 +1,8 @@
 ---
 title: "Building This Site: An AI-Driven Journey"
 date: "2026-03-11"
-excerpt: "A deep dive into the tech stack, the infrastructure, and how Antigravity helped build this high-performance portfolio."
+
+
 ---
 # Building This Site: An AI-Driven Journey
 

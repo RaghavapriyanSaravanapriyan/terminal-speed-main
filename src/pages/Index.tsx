@@ -74,7 +74,7 @@ const Index = () => {
                   GITHUB ↗
                 </a>
                 <a
-                  href="https://linkedin.com/in/raghavapriyan-s"
+                  href="https://www.linkedin.com/in/raghavapriyan/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground hover:translate-x-4 transition-all duration-500"
@@ -82,7 +82,7 @@ const Index = () => {
                   LINKEDIN ↗
                 </a>
                 <a
-                  href="mailto:raghavapriyan@example.com"
+                  href="mailto:s.raghavapriyan@gmail.com"
                   className="text-muted-foreground hover:text-foreground hover:translate-x-4 transition-all duration-500"
                 >
                   EMAIL ↗

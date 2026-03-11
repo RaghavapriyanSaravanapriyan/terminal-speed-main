@@ -1,7 +1,8 @@
 ---
 title: "Why Terminal Speed Matters"
 date: "2026-03-11"
-excerpt: "Speed is not just about raw performance; it's about the feedback loop."
+
+
 ---
 # Why Terminal Speed Matters
 
