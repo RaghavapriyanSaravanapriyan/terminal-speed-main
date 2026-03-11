@@ -30,28 +30,30 @@ const Index = () => {
     <SmoothScroll>
       <main className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
         {/* Dynamic Hero Section based on Reference Image */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-white text-lg sm:text-xl font-bold tracking-[0.6em] mb-10 uppercase opacity-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
-            // IDENTITY
-          </p>
-
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 leading-[0.85] text-white animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both">
-            Raghavapriyan<br />
-            Saravanapriyan
-          </h1>
-
-          <div className="flex flex-col items-center gap-12 mt-4">
-            <p className="text-muted-foreground text-[8px] sm:text-[10px] font-bold tracking-[0.4em] uppercase opacity-70 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-both">
-              CS UNDERGRAD <span className="mx-2 opacity-30">|</span> VIT VELLORE <span className="mx-2 opacity-30">|</span> AI/ML
+        <section className="relative min-h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden">
+          <div className="relative z-10 w-full flex flex-col items-center">
+            <p className="text-white text-lg sm:text-xl font-bold tracking-[0.6em] mb-10 uppercase opacity-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
+              // IDENTITY
             </p>
 
-            <div className="mt-12 space-y-4">
-              <p className="text-[#fef9c3] text-[8px] sm:text-[10px] font-mono font-bold tracking-[0.6em] uppercase opacity-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-1000 fill-mode-both">
-                FOR THE LOVE OF THE GAME
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-6 leading-[0.85] text-white animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both">
+              Raghavapriyan<br />
+              Saravanapriyan
+            </h1>
+
+            <div className="flex flex-col items-center gap-12 mt-4">
+              <p className="text-white text-[8px] sm:text-[10px] font-bold tracking-[0.4em] uppercase opacity-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-both">
+                CS UNDERGRAD <span className="mx-2 opacity-30">|</span> VIT VELLORE <span className="mx-2 opacity-30">|</span> AI/ML
               </p>
-              <p className="text-lg sm:text-xl font-mono tracking-tight text-[#fef9c3] opacity-90">
-                {typedTerminalText}<span className="cursor-blink ml-1 text-primary">█</span>
-              </p>
+
+              <div className="mt-12 space-y-4">
+                <p className="text-[#fef9c3] text-[8px] sm:text-[10px] font-mono font-bold tracking-[0.6em] uppercase opacity-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-1000 fill-mode-both">
+                  FOR THE LOVE OF THE GAME
+                </p>
+                <p className="text-lg sm:text-xl font-mono tracking-tight text-[#fef9c3] opacity-90">
+                  {typedTerminalText}<span className="cursor-blink ml-1 text-primary">█</span>
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -122,7 +124,7 @@ const Index = () => {
               </p>
             )}
           </div>
-          <div className="overflow-x-auto flex justify-center grayscale hover:grayscale-0 transition-all duration-1000 hover:scale-[1.02] transform transition-transform p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
+          <div className="overflow-x-auto flex justify-center transition-all duration-1000 hover:scale-[1.02] transform transition-transform p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
             <img
               src="https://github-contributions-api.deno.dev/RaghavapriyanSaravanapriyan.svg?no-legend=true&no-total=true"
               alt="GitHub Contributions"
