@@ -1,0 +1,16 @@
+[
+  {
+    "id": "speed-matters",
+    "title": "Why Terminal Speed Matters",
+    "date": "2026-03-11",
+    "excerpt": "Speed is not just about raw performance; it's about the feedback loop.",
+    "file": "/posts/speed-matters.md"
+  },
+  {
+    "id": "ai-2026",
+    "title": "AI in 2026: More Than Just Chatbots",
+    "date": "2026-03-10",
+    "excerpt": "The landscape of AI has shifted from simple conversational agents to deeply integrated agentic systems.",
+    "file": "/posts/ai-2026.md"
+  }
+]

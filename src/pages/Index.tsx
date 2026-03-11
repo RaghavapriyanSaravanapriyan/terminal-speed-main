@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useTypewriter } from "../hooks/useTypewriter";
 import { SmoothScroll } from "../components/SmoothScroll";
-import { LinkedInSection } from "../components/LinkedInSection";
+import { BlogSection } from "../components/BlogSection";
 import syncData from "../content/sync-data.json";
 
 const Index = () => {
   const [contributionCount, setContributionCount] = useState<number | null>(syncData.github.lastYear || null);
   const terminalText = "I build epic stuff.";
   const typedTerminalText = useTypewriter(terminalText, 50, 2000);
+  const [aboutMe, setAboutMe] = useState<string>("");
 
   useEffect(() => {
     fetch("https://github-contributions-api.deno.dev/RaghavapriyanSaravanapriyan.json")
@@ -18,6 +19,11 @@ const Index = () => {
         }
       })
       .catch(err => console.error("Failed to fetch GitHub contributions:", err));
+
+    fetch("/about-me.txt")
+      .then(res => res.text())
+      .then(text => setAboutMe(text))
+      .catch(err => console.error("Failed to fetch about-me.txt:", err));
   }, []);
 
   return (
@@ -94,6 +100,18 @@ const Index = () => {
           </div>
         </section>
 
+        {/* About Me Section */}
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-24 border-t border-border/50">
+          <div className="max-w-4xl">
+            <p className="text-muted-foreground text-[10px] font-bold tracking-widest mb-10 uppercase opacity-50">// ABOUT_ME</p>
+            <div className="space-y-6">
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#fef9c3] leading-tight">
+                {aboutMe || "Loading description..."}
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* GitHub Contributions */}
         <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
           <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-6">
@@ -114,8 +132,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* LinkedIn Posts Sync */}
-        <LinkedInSection />
+        {/* Blog Posts Sync */}
+        <BlogSection />
 
         {/* Projects */}
         <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
