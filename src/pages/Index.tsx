@@ -31,7 +31,7 @@ const Index = () => {
       <main className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
         {/* Dynamic Hero Section based on Reference Image */}
         <section className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-          <p className="text-muted-foreground text-[8px] sm:text-xs font-bold tracking-[0.6em] mb-10 uppercase opacity-60 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
+          <p className="text-white text-lg sm:text-xl font-bold tracking-[0.6em] mb-10 uppercase opacity-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
             // IDENTITY
           </p>
 
@@ -61,7 +61,7 @@ const Index = () => {
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Links Vertical */}
             <div className="flex flex-col items-start gap-6 order-2 md:order-1">
-              <p className="text-muted-foreground text-[10px] font-bold tracking-widest mb-3 uppercase opacity-50">// CONNECT</p>
+              <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// CONNECT</p>
               <div className="flex flex-col gap-6 text-2xl sm:text-4xl font-bold tracking-tighter transition-all">
                 <a
                   href="https://github.com/RaghavapriyanSaravanapriyan"
@@ -103,7 +103,7 @@ const Index = () => {
         {/* About Me Section */}
         <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-24 border-t border-border/50">
           <div className="max-w-4xl">
-            <p className="text-muted-foreground text-[10px] font-bold tracking-widest mb-10 uppercase opacity-50">// ABOUT_ME</p>
+            <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// ABOUT_ME</p>
             <div className="space-y-6">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#fef9c3] leading-tight">
                 {aboutMe || "Loading description..."}
@@ -184,7 +184,7 @@ const Index = () => {
           <div className="space-y-10 font-mono">
             <div>
               <p className="text-lg text-white mb-2">CBSE_12TH: <span className="text-primary">478/500 (95.6%)</span> — Rank 2 Biology Stream</p>
-              <p className="text-muted-foreground text-xs opacity-50">&gt; Physics, Chemistry, Biology, Mathematics</p>
+              <p className="text-white/70 text-xs">&gt; Physics, Chemistry, Biology, Mathematics</p>
             </div>
             <div>
               <p className="text-lg text-white mb-2">CBSE_10TH: <span className="text-primary">486/500 (97.2%)</span> — Perfect in Social Science</p>
@@ -224,7 +224,7 @@ const Index = () => {
               <p className="text-2xl sm:text-3xl font-bold mb-2 tracking-tighter text-white">HIGH SCHOOL</p>
               <p className="text-lg text-muted-foreground uppercase tracking-widest opacity-60">The PSBB Millennium School, OMR</p>
               <p className="text-base font-mono mt-3 opacity-70">2021 — 2025 | Biology Stream, 12th Grade CBSE</p>
-              <p className="text-muted-foreground text-[10px] mt-2 italic opacity-40 text-left-corner">
+              <p className="text-white/60 text-[10px] mt-2 italic text-left-corner">
                 &gt; sat in last bench left corner.
               </p>
             </div>
@@ -233,7 +233,7 @@ const Index = () => {
 
         {/* Footer */}
         <footer className="px-4 sm:px-8 md:px-16 lg:px-32 py-32 border-t border-border/50 text-center">
-          <p className="text-muted-foreground text-sm font-mono tracking-widest uppercase opacity-40">
+          <p className="text-white/70 text-sm font-mono tracking-widest uppercase">
             Raghavapriyan Saravanapriyan &copy; 2026 / Built for speed
           </p>
         </footer>
