@@ -9,6 +9,17 @@ const Index = () => {
   const [contributionData, setContributionData] = useState<any[][] | null>(null);
   const [hoveredDay, setHoveredDay] = useState<{ date: string, count: number } | null>(null);
   const terminalText = "I build epic stuff.";
+  
+  const getContributionColor = (level: string) => {
+    switch (level) {
+      case "FIRST_QUARTILE": return "#216e39"; // Darkest
+      case "SECOND_QUARTILE": return "#30a14e";
+      case "THIRD_QUARTILE": return "#40c463";
+      case "FOURTH_QUARTILE": return "#9be9a8"; // Lightest
+      default: return "#161b22"; // NONE
+    }
+  };
+
   const typedTerminalText = useTypewriter(terminalText, 50, 2000);
   const [aboutMe, setAboutMe] = useState<string>("");
 
@@ -157,7 +168,7 @@ const Index = () => {
                           key={`${wIdx}-${dIdx}`}
                           className="w-3 h-3 rounded-[2px] transition-all duration-300 hover:scale-125 hover:z-10 border border-white/[0.08]"
                           style={{ 
-                            backgroundColor: day.color === "#ebedf0" ? "#161b22" : day.color,
+                            backgroundColor: getContributionColor(day.contributionLevel),
                             outline: "1px solid rgba(255,255,255,0.05)"
                           }}
                           onMouseEnter={() => setHoveredDay({ date: day.date, count: day.contributionCount })}
@@ -179,10 +190,10 @@ const Index = () => {
               <span>Less</span>
               <div className="flex gap-[3px] items-center p-1 bg-black/20 rounded border border-white/5">
                 <div className="w-2.5 h-2.5 rounded-[1px] bg-[#161b22] border border-white/10"></div>
-                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#9be9a8]"></div>
-                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#40c463]"></div>
-                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#30a14e]"></div>
                 <div className="w-2.5 h-2.5 rounded-[1px] bg-[#216e39]"></div>
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#30a14e]"></div>
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#40c463]"></div>
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#9be9a8]"></div>
               </div>
               <span>More</span>
             </div>
