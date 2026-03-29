@@ -6,6 +6,8 @@ import syncData from "../content/sync-data.json";
 
 const Index = () => {
   const [contributionCount, setContributionCount] = useState<number | null>(syncData.github.lastYear || null);
+  const [contributionData, setContributionData] = useState<any[][] | null>(null);
+  const [hoveredDay, setHoveredDay] = useState<{ date: string, count: number } | null>(null);
   const terminalText = "I build epic stuff.";
   const typedTerminalText = useTypewriter(terminalText, 50, 2000);
   const [aboutMe, setAboutMe] = useState<string>("");
@@ -14,8 +16,11 @@ const Index = () => {
     fetch("https://github-contributions-api.deno.dev/RaghavapriyanSaravanapriyan.json")
       .then(res => res.json())
       .then(data => {
-        if (data && data.total && data.total.lastYear) {
-          setContributionCount(data.total.lastYear);
+        if (data && data.totalContributions !== undefined) {
+          setContributionCount(data.totalContributions);
+        }
+        if (data && data.contributions) {
+          setContributionData(data.contributions);
         }
       })
       .catch(err => console.error("Failed to fetch GitHub contributions:", err));
@@ -116,21 +121,71 @@ const Index = () => {
 
         {/* GitHub Contributions */}
         <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-20 border-t border-border/50">
-          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-6">
-            <p className="text-white text-lg sm:text-xl font-bold tracking-widest uppercase opacity-100">// CONTRIBUTIONS</p>
+          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-10">
+            <div className="space-y-2">
+              <p className="text-white text-lg sm:text-xl font-bold tracking-widest uppercase opacity-100">// CONTRIBUTIONS</p>
+              {hoveredDay ? (
+                <p className="text-xs font-mono text-primary animate-in fade-in slide-in-from-left-2">
+                  &gt; {hoveredDay.count} contributions on {hoveredDay.date}
+                </p>
+              ) : (
+                <p className="text-xs font-mono text-muted-foreground opacity-50">
+                  &gt; Hover over a cell for details
+                </p>
+              )}
+            </div>
             {contributionCount !== null && (
-              <p className="text-lg font-bold tracking-tight text-white/90">
-                {contributionCount.toLocaleString()} <span className="text-muted-foreground font-normal text-xs uppercase tracking-widest ml-2">Contributions in the last year</span>
-              </p>
+              <div className="text-right">
+                <p className="text-3xl sm:text-4xl font-bold tracking-tighter text-white">
+                  {contributionCount.toLocaleString()}
+                </p>
+                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground">
+                  Contributions in the last year
+                </p>
+              </div>
             )}
           </div>
-          <div className="overflow-x-auto flex justify-center transition-all duration-1000 hover:scale-[1.02] transform transition-transform p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
-            <img
-              src="https://github-contributions-api.deno.dev/RaghavapriyanSaravanapriyan.svg?no-legend=true&no-total=true"
-              alt="GitHub Contributions"
-              className="max-w-full h-auto filter drop-shadow-[0_0_20px_rgba(255,255,255,0.05)]"
-              loading="lazy"
-            />
+
+          <div className="relative group transition-all duration-1000 p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden">
+            <div className="overflow-x-auto pb-4 custom-scrollbar">
+              <div className="flex gap-[3px] min-w-max">
+                {contributionData ? (
+                  contributionData.map((week, wIdx) => (
+                    <div key={wIdx} className="flex flex-col gap-[3px]">
+                      {week.map((day, dIdx) => (
+                        <div
+                          key={`${wIdx}-${dIdx}`}
+                          className="w-3 h-3 rounded-[2px] transition-all duration-300 hover:scale-125 hover:z-10"
+                          style={{ 
+                            backgroundColor: day.color === "#ebedf0" ? "rgba(255,255,255,0.05)" : day.color,
+                            opacity: day.color === "#ebedf0" ? 0.3 : 1
+                          }}
+                          onMouseEnter={() => setHoveredDay({ date: day.date, count: day.contributionCount })}
+                          onMouseLeave={() => setHoveredDay(null)}
+                        />
+                      ))}
+                    </div>
+                  ))
+                ) : (
+                  <div className="w-full h-24 flex items-center justify-center">
+                    <p className="text-xs font-mono animate-pulse opacity-50">SYNCING_DATA...</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Legend */}
+            <div className="mt-6 flex items-center justify-end gap-2 text-[10px] font-mono text-muted-foreground opacity-50">
+              <span>Less</span>
+              <div className="flex gap-[3px]">
+                <div className="w-2 h-2 rounded-[1px] bg-white/5"></div>
+                <div className="w-2 h-2 rounded-[1px] bg-[#9be9a8]"></div>
+                <div className="w-2 h-2 rounded-[1px] bg-[#40c463]"></div>
+                <div className="w-2 h-2 rounded-[1px] bg-[#30a14e]"></div>
+                <div className="w-2 h-2 rounded-[1px] bg-[#216e39]"></div>
+              </div>
+              <span>More</span>
+            </div>
           </div>
         </section>
 
