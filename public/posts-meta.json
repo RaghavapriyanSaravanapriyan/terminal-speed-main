@@ -1,30 +1,16 @@
 [
   {
-    "id": "linkedin-milestone",
-    "title": "Milestone: 25k Impressions & 1.5k Followers!",
-    "date": "2026-03-29",
-    "excerpt": "Celebrating a huge growth milestone on LinkedIn! Reflecting on the journey and the power of building in public.",
-    "file": "/posts/linkedin-milestone.md"
+    "id": "1.5k Linkedin!",
+    "title": "1.5k Linkedin!",
+    "date": "",
+    "excerpt": "",
+    "file": "/posts/1.5k Linkedin!.md"
   },
   {
-    "id": "building-this-site",
-    "title": "Building This Site: An AI-Driven Journey",
-    "date": "2026-03-11",
-    "excerpt": "A deep dive into the tech stack, the infrastructure, and how Antigravity helped build this high-performance portfolio.",
-    "file": "/posts/building-this-site.md"
-  },
-  {
-    "id": "speed-matters",
-    "title": "Why Terminal Speed Matters",
-    "date": "2026-03-11",
-    "excerpt": "Speed is not just about raw performance; it's about the feedback loop.",
-    "file": "/posts/speed-matters.md"
-  },
-  {
-    "id": "ai-2026",
-    "title": "AI in 2026: More Than Just Chatbots",
-    "date": "2026-03-10",
-    "excerpt": "The landscape of AI has shifted from simple conversational agents to deeply integrated agentic systems.",
-    "file": "/posts/ai-2026.md"
+    "id": "Hello_World",
+    "title": "Hello_World",
+    "date": "",
+    "excerpt": "",
+    "file": "/posts/Hello_World.md"
   }
 ]

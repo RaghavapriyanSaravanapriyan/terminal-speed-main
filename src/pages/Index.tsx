@@ -142,6 +142,7 @@ const Index = () => {
           <p className="text-white text-lg sm:text-xl font-bold tracking-widest mb-10 uppercase opacity-100">// PROJECTS</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10">
             {[
+              { title: "Smart Doorcam MDP", desc: "Smart authenticated doorcam system with real-time protocol and interactive dashboard.", tech: "Python, OpenCV, HTML", url: "https://github.com/RaghavapriyanSaravanapriyan/Smart-doorcam-MDP" },
               { title: "CLI Management", desc: "Efficient student management system via terminal interface.", tech: "Python", url: "https://github.com/RaghavapriyanSaravanapriyan/CLI_Student_management_system" },
               { title: "iPhone ML", desc: "Linear regression model for mobile device price forecasting.", tech: "Python, Scikit-learn", url: "https://github.com/RaghavapriyanSaravanapriyan/Predicting-future-iPhone-Pro-Max-prices-using-ML" },
               { title: "AutoWifi-VIT", desc: "Automated authentication script for campus WiFi networks.", tech: "Python", url: "https://github.com/RaghavapriyanSaravanapriyan/AutoWifi-VIT" }
