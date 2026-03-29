@@ -1,0 +1,25 @@
+# Milestone: 25,000 Impressions & 1,500 Followers!
+date: "2026-03-29"
+
+What a journey it has been!
+
+I'm incredibly excited to share that I've officially crossed **25,000 content impressions** and welcomed over **1,500 followers** to my LinkedIn community. 
+
+![LinkedIn Content Performance](./linkedin-milestone.png)
+
+When I started sharing my journey in AI, software engineering, and automation, I didn't expect to connect with so many like-minded builders and learners so quickly. These numbers are more than just metrics to me—they represent 25,000 moments where someone found my work interesting enough to stop and 1,500 people who want to see what I build next.
+
+### Why this matters to me
+Building in public has been one of the best decisions I've made. It keeps me accountable, forces me to refine my thoughts, and most importantly, has introduced me to an incredible network of professionals and mentors.
+
+To everyone who has liked, commented, or followed—**thank you**. Your support is what fuels the "Terminal Speed" at which I try to learn and create.
+
+### Let's connect!
+If we haven't connected yet, I'd love to hear from you. I regularly post about:
+- 🤖 **Deep Learning & Computer Vision**
+- 🛠️ **Agentic Coding & Automation**
+- 🎓 **My journey as a CS student at VIT Vellore**
+
+Check out my profile here: [linkedin.com/in/raghavapriyan](https://www.linkedin.com/in/raghavapriyan/)
+
+The journey is just beginning. Let’s keep building! ⚡️
