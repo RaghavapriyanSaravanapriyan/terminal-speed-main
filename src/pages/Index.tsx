@@ -136,7 +136,7 @@ const Index = () => {
             </div>
             {contributionCount !== null && (
               <div className="text-right">
-                <p className="text-3xl sm:text-4xl font-bold tracking-tighter text-white">
+                <p className="text-3xl sm:text-4xl font-bold tracking-tighter text-white tabular-nums">
                   {contributionCount.toLocaleString()}
                 </p>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground">
@@ -146,19 +146,19 @@ const Index = () => {
             )}
           </div>
 
-          <div className="relative group transition-all duration-1000 p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden">
+          <div className="relative group transition-all duration-1000 p-8 bg-black/40 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-inner">
             <div className="overflow-x-auto pb-4 custom-scrollbar">
-              <div className="flex gap-[3px] min-w-max">
+              <div className="flex gap-[4px] min-w-max p-1 rounded-lg border border-white/5 bg-black/20">
                 {contributionData ? (
                   contributionData.map((week, wIdx) => (
-                    <div key={wIdx} className="flex flex-col gap-[3px]">
+                    <div key={wIdx} className="flex flex-col gap-[4px]">
                       {week.map((day, dIdx) => (
                         <div
                           key={`${wIdx}-${dIdx}`}
-                          className="w-3 h-3 rounded-[2px] transition-all duration-300 hover:scale-125 hover:z-10"
+                          className="w-3 h-3 rounded-[2px] transition-all duration-300 hover:scale-125 hover:z-10 border border-white/[0.08]"
                           style={{ 
-                            backgroundColor: day.color === "#ebedf0" ? "rgba(255,255,255,0.05)" : day.color,
-                            opacity: day.color === "#ebedf0" ? 0.3 : 1
+                            backgroundColor: day.color === "#ebedf0" ? "#161b22" : day.color,
+                            outline: "1px solid rgba(255,255,255,0.05)"
                           }}
                           onMouseEnter={() => setHoveredDay({ date: day.date, count: day.contributionCount })}
                           onMouseLeave={() => setHoveredDay(null)}
@@ -168,7 +168,7 @@ const Index = () => {
                   ))
                 ) : (
                   <div className="w-full h-24 flex items-center justify-center">
-                    <p className="text-xs font-mono animate-pulse opacity-50">SYNCING_DATA...</p>
+                    <p className="text-xs font-mono animate-pulse opacity-50 text-primary">SYNCING_DATA...</p>
                   </div>
                 )}
               </div>
@@ -177,12 +177,12 @@ const Index = () => {
             {/* Legend */}
             <div className="mt-6 flex items-center justify-end gap-2 text-[10px] font-mono text-muted-foreground opacity-50">
               <span>Less</span>
-              <div className="flex gap-[3px]">
-                <div className="w-2 h-2 rounded-[1px] bg-white/5"></div>
-                <div className="w-2 h-2 rounded-[1px] bg-[#9be9a8]"></div>
-                <div className="w-2 h-2 rounded-[1px] bg-[#40c463]"></div>
-                <div className="w-2 h-2 rounded-[1px] bg-[#30a14e]"></div>
-                <div className="w-2 h-2 rounded-[1px] bg-[#216e39]"></div>
+              <div className="flex gap-[3px] items-center p-1 bg-black/20 rounded border border-white/5">
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#161b22] border border-white/10"></div>
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#9be9a8]"></div>
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#40c463]"></div>
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#30a14e]"></div>
+                <div className="w-2.5 h-2.5 rounded-[1px] bg-[#216e39]"></div>
               </div>
               <span>More</span>
             </div>
