@@ -6,7 +6,7 @@ import syncData from "../content/sync-data.json";
 
 const Index = () => {
   const [contributionCount, setContributionCount] = useState<number | null>(syncData.github.lastYear || null);
-  const [contributionData, setContributionData] = useState<any[][] | null>(null);
+  const [contributionData, setContributionData] = useState<any[][] | null>((syncData.github as any).contributions || null);
   const [hoveredDay, setHoveredDay] = useState<{ date: string, count: number } | null>(null);
   const terminalText = "I build epic stuff.";
   
@@ -31,7 +31,11 @@ const Index = () => {
           setContributionCount(data.totalContributions);
         }
         if (data && data.contributions) {
-          setContributionData(data.contributions);
+          const today = new Date().toISOString().split('T')[0];
+          const filtered = data.contributions.map((week: any[]) => 
+            week.filter((day: any) => day.date <= today)
+          ).filter((week: any[]) => week.length > 0);
+          setContributionData(filtered);
         }
       })
       .catch(err => console.error("Failed to fetch GitHub contributions:", err));

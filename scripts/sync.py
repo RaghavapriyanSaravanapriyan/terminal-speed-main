@@ -6,15 +6,34 @@ import datetime
 GITHUB_USERNAME = "RaghavapriyanSaravanapriyan"
 LINKEDIN_URL = "https://www.linkedin.com/in/raghavapriyan/"
 
-def fetch_github_contributions():
+def fetch_github_data():
     try:
-        url = f"https://github-contributions-api.deno.dev/{GITHUB_USERNAME}/count"
+        url = f"https://github-contributions-api.deno.dev/{GITHUB_USERNAME}.json"
         response = requests.get(url)
         data = response.json()
-        return data.get("total", {}).get("lastYear", 0)
+        
+        # Filter future dates based on UTC
+        today_utc = datetime.datetime.now(datetime.timezone.utc).date()
+        
+        filtered_contributions = []
+        for week in data.get("contributions", []):
+            filtered_week = []
+            for day in week:
+                # Comparison is safe as both are date objects
+                day_date = datetime.datetime.strptime(day["date"], "%Y-%m-%d").date()
+                if day_date <= today_utc:
+                    filtered_week.append(day)
+            
+            if filtered_week:
+                filtered_contributions.append(filtered_week)
+        
+        return {
+            "lastYear": data.get("totalContributions", 0),
+            "contributions": filtered_contributions
+        }
     except Exception as e:
-        print(f"Error fetching GitHub contributions: {e}")
-        return 0
+        print(f"Error fetching GitHub data: {e}")
+        return {"lastYear": 0, "contributions": []}
 
 def fetch_linkedin_posts():
     # Mocking 6 recent posts for the portfolio
@@ -94,14 +113,12 @@ def fetch_linkedin_certs():
 
 def main():
     print("Syncing data...")
-    github_count = fetch_github_contributions()
+    github_data = fetch_github_data()
     linkedin_posts = fetch_linkedin_posts()
     linkedin_certs = fetch_linkedin_certs()
     
     data = {
-        "github": {
-            "lastYear": github_count
-        },
+        "github": github_data,
         "linkedin_posts": linkedin_posts,
         "certifications": linkedin_certs
     }
