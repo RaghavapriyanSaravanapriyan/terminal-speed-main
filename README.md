@@ -7,7 +7,7 @@ Terminal Speed is a high-performance, minimal developer portfolio designed for t
 The purpose of this portfolio is to:
 - **Demonstrate Technical Depth**: Showcasing real-world projects, certifications, and academic achievements without unnecessary fluff.
 - **Optimize for Performance**: Leveraging Vite, React, and Tailwind CSS to ensure near-instant load times and a developer-first UX.
-- **Build in Public**: Serving as a living laboratory for testing new patterns in agentic coding, automation, and AI-driven development.
+
 
 ## Tech Stack
 - **Core**: Vite, React, TypeScript
