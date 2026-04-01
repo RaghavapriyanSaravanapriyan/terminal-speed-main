@@ -1,7 +1,7 @@
 # Terminal Speed - Developer Portfolio
 
 ## Mission: Built for Speed
-Terminal Speed is a high-performance, minimal developer portfolio designed for the modern engineer. In a world of bloated, over-engineered personal sites, this project focuses on what truly matters: **raw speed**, **clean code**, and **distraction-free content**.
+Terminal Speed is a high-performance, minimal developer portfolio designed for the modern engineer. In a world of bloated, over-engineered personal sites, this project focuses on what truly matters: **raw speed**, **clean code**, and **distraction-free content**. Built extensively with the help of Gemini 3 Pro agents.
 
 ## Purpose
 The purpose of this portfolio is to:
